@@ -41,9 +41,8 @@ const Hero = () => {
   };
 
   return (
-    <div className="max-w-[1280px] mx-auto">
-      hero
-      {/* <div className="flex  justify-center pt-20">
+    <div className="max-w-[1280px] mx-4 xl:mx-auto ">
+      <div className="flex  justify-center pt-20">
         <h1 className="text-xl">
           Elevate Your Day with a Symphony of Weather Intelligence
         </h1>
@@ -62,57 +61,73 @@ const Hero = () => {
           {" "}
           Search weather
         </button>
-        <p className="pt-2 text-base">
-          The Weather in {query} is {weather.current.temp_c}&#8451;
-        </p>
+        {weather && (
+          <p className="pt-2 text-base">
+            The Weather in {query} is {weather.current.temp_c}&#8451; and the
+            Wind speed is {weather.current.wind_mph} mph.
+          </p>
+        )}
       </div>
-      <div className="flex justify-between mt-10">
-        <div className="paris ">
+      <div className=" flex flex-col md:flex-row justify-between items-center  mt-10">
+        <div className="paris lg:w-1/3">
           <Image
             className="rounded-lg"
             src={"/Images/paris.jpg"}
-            height={400}
-            width={400}
+            height={360}
+            width={360}
           />
-          <h1 class=" pt-2 pl-1 font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-rose-400 to-fuchsia-500">
-            Paris ({paris.current.temp_c}&#8451;)
-          </h1>
-          <p className="pt-2 pl-1 text-base tracking-tight">
-            The Weather in paris is {paris.current.temp_c}&#8451; and the Wind
-            speed is {paris.current.wind_mph} mph.
-          </p>
+          {paris && (
+            <h1 class=" pt-2 pl-1 font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-rose-400 to-fuchsia-500">
+              Paris ({paris.current.temp_c}&#8451;)
+            </h1>
+          )}
+          {paris && (
+            <p className="pt-2 pl-1 text-base tracking-tight w-4/5">
+              The Weather in paris is {paris.current.temp_c}&#8451; and the Wind
+              speed is {paris.current.wind_mph} mph.
+            </p>
+          )}
         </div>
-        <div className="mumbai">
+        <div className="mumbai lg:w-1/3">
           <Image
             className="rounded-lg"
             src={"/Images/mumbai.jpg"}
-            height={400}
-            width={400}
+            height={360}
+            width={360}
           />
-          <h1 class="pl-1 pt-2 font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-rose-400 to-fuchsia-500">
-            Mumbai({mum.current.temp_c}&#8451;)
-          </h1>
-          <p className="pt-2 pl-1 text-base tracking-tight">
-            The Weather in Mumbai is {mum.current.temp_c}&#8451; and the Wind
-            speed is {mum.current.wind_mph} mph.
-          </p>
+          {mum && (
+            <h1 class="pl-1 pt-2 font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-rose-400 to-fuchsia-500">
+              Mumbai ({mum.current.temp_c}&#8451;)
+            </h1>
+          )}
+
+          {mum && (
+            <p className="pt-2 pl-1 text-base tracking-tight w-4/5">
+              The Weather in Mumbai is {mum.current.temp_c}&#8451; and the Wind
+              speed is {mum.current.wind_mph} mph.
+            </p>
+          )}
         </div>
-        <div className="dubai">
+        <div className="dubai lg:w-1/3 sm:hidden lg:block ">
           <Image
             className="rounded-lg"
             src={"/Images/dubai.jpg"}
-            height={400}
-            width={400}
+            height={360}
+            width={360}
           />
-          <h1 class="pl-1 pt-2 font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-rose-400 to-fuchsia-500">
-            Dubai({dub.current.temp_c}&#8451;)
-          </h1>
-          <p className="pt-2 pl-1 text-base tracking-tight">
-            The Weather in Dubai is {dub.current.temp_c}&#8451; and the Wind
-            speed is {dub.current.wind_mph} mph.
-          </p>
-        </div> */}
-      {/* </div> */}
+          {dub && (
+            <h1 class="pl-1 pt-2 font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-rose-400 to-fuchsia-500">
+              Dubai ({dub.current.temp_c}&#8451;)
+            </h1>
+          )}
+          {dub && (
+            <p className="pt-2 pl-1 text-base tracking-tight w-4/5">
+              The Weather in Dubai is {dub.current.temp_c}&#8451; and the Wind
+              speed is {dub.current.wind_mph} mph.
+            </p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
