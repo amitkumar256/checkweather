@@ -42,9 +42,9 @@ const Hero = () => {
 
   return (
     <div className="max-w-[1280px] mx-4 xl:mx-auto ">
-      <div className="flex  justify-center pt-20">
+      <div className="flex  justify-center pt-10 sm:pt-20">
         <h1 className="text-xl">
-          Elevate Your Day with a Symphony of Weather Intelligence
+          Elevate Your Day with a Symphony of Weather Intelligence.
         </h1>
       </div>
       <div className="pt-4">
@@ -68,7 +68,7 @@ const Hero = () => {
           </p>
         )}
       </div>
-      <div className=" flex flex-col md:flex-row justify-between items-center  mt-10">
+      <div className=" flex flex-col gap-4 pb-2 sm:gap-0 md:flex-row justify-between items-center  mt-10">
         <div className="paris lg:w-1/3">
           <Image
             className="rounded-lg"
